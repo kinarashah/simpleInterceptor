@@ -104,6 +104,10 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 	// Check the account ID
 	accountID := request.Headers["X-API-Account-Id"]
 	logrus.Infof("Account ID %s", accountID)
+
+	kind := request.Headers["X-API-Account-Kind"]
+	logrus.Infof("Account Kind %s", kind)
+
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
